@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose=require('mongoose');
+var Event=require('./models/eventModel');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -16,7 +17,6 @@ var db = mongoose.connect('mongodb://localhost/eventAPI',{
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-var Event=require('./models/eventModel');
 
 var app = express();
 
@@ -37,8 +37,10 @@ app.use('/', index);
 app.use('/users', users);
 
 //creating eventRouter using eventModel
-eventRouter = require('./routes/eventsRoutes')(Event);
-app.use('/events',eventRouter);
+//eventRouter = require('./routes/eventsRoutes')(Event);
+//app.use('/events',eventRouter);
+var routes=require('./routes/eRoute');
+routes(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
