@@ -8,8 +8,10 @@ exports.list_all_events=function (req,res) {
         if(err)
             res.send(err);
         res.json(event);
+    }).sort({date: -1}).exec(function (err, events) {
+
     })
-}
+};
 
 
 exports.create_a_event=function (req,res) {
