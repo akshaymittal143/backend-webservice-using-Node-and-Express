@@ -10,7 +10,9 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 //creating connection to Database
-var db = mongoose.connect('mongodb://localhost/eventAPI');
+var db = mongoose.connect('mongodb://localhost/eventAPI',{
+    useMongoClient: true
+});
 
 var Event=require('./models/eventModel');
 
