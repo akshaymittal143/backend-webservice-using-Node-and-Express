@@ -22,7 +22,7 @@ var routes=function (Event) {
             });
         });
 
-    bookRouter.route('/:eventId')
+    eventRouter.route('/:eventId')
         .get(function (req, res) {
 
             Event.findById(req.params.eventId, function (err, event) {
@@ -35,3 +35,5 @@ var routes=function (Event) {
         });
     return eventRouter;
 };
+
+module.exports=routes;

@@ -33,7 +33,7 @@ app.use('/', index);
 app.use('/users', users);
 
 //creating eventRouter using eventModel
-eventRouter=require('./routes/eventsRoutes')(Event);
+eventRouter = require('./routes/eventsRoutes')(Event);
 app.use('/events',eventRouter);
 
 // catch 404 and forward to error handler

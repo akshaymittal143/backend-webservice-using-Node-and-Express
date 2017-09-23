@@ -13,4 +13,4 @@ var eventModel=new Schema(
 
 
 
-module.exports=mongoose.model('event', eventModel);
+module.exports=mongoose.model('Event', eventModel);
