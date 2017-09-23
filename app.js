@@ -14,6 +14,8 @@ var db = mongoose.connect('mongodb://localhost/eventAPI',{
     useMongoClient: true
 });
 
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 var Event=require('./models/eventModel');
 
 var app = express();
