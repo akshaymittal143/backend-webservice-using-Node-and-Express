@@ -7,7 +7,8 @@ var routes=function (Event) {
         .post(function (req, res) {
             var event = new Event(req.body);
             event.save();
-            res.status(201).send(event);
+            res.status(200);
+            res.send(event);
         })
         .get(function (req, res) {
             var query = {};
