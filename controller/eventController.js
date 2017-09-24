@@ -1,7 +1,8 @@
 'use strict';
 
 var mongoose=require('mongoose'),
-    Event=mongoose.model('Event');
+    Event=mongoose.model('Event'),
+    Summary=mongoose.model('Summary');
 
 exports.list_all_events=function (req,res) {
     Event.find({}, function (err, event) {
@@ -56,12 +57,20 @@ exports.delete_a_event=function (req,res) {
 
 exports.clear_events=function (req,res) {
     var collection=Event.collection('eventAPI');
-
-    if(req.params.clear) {
-        collection.deleteMany({}, function (err, event) {
+    var query={};
+        collection.deleteMany(query, function (err, event) {
             if (err)
                 res.send(err);
+                console.log(obj.event.n + "document(s) deleted");
                 res.json({message: 'All events clear'});
         });
-    }
+
+};
+
+exports.get_summary=function (req,res) {
+    Summary.find({},function (err,summary) {
+        if(err)
+            res.send(err);
+            res.json(summary);
+    });
 };

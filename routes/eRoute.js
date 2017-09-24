@@ -14,5 +14,8 @@ module.exports=function (app) {
 
     app.route('/events/:clear')
         .post(eventList.clear_events);
+
+    app.route('/events/summary')
+        .get(eventList.get_summary);
 };
 

@@ -11,5 +11,15 @@ var eventModel=new Schema(
         otheruser: {type: String, select: false}
     });
 
+var summarySchema=new Schema(
+    {
+        events: [{type: mongoose.Schema.ObjectId, ref: 'Event'}],
+        enters: Number,
+        leaves: Number,
+        comments:Number,
+        highfives: Number
 
+    });
+
+module.exports=mongoose.model('Summary', summarySchema);
 module.exports=mongoose.model('Event', eventModel);
