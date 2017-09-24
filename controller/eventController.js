@@ -53,3 +53,15 @@ exports.delete_a_event=function (req,res) {
     });
 
 };
+
+exports.clear_events=function (req,res) {
+    var collection=Event.collection('eventAPI');
+
+    if(req.params.clear) {
+        collection.deleteMany({}, function (err, event) {
+            if (err)
+                res.send(err);
+                res.json({message: 'All events clear'});
+        });
+    }
+};

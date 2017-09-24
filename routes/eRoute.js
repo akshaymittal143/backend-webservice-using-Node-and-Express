@@ -11,5 +11,8 @@ module.exports=function (app) {
     app.route('/events/:eventId')
         .get(eventList.read_a_event)
         .delete(eventList.delete_a_event);
+
+    app.route('/events/:clear')
+        .post(eventList.clear_events);
 };
 

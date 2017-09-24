@@ -11,16 +11,5 @@ var eventModel=new Schema(
         otheruser: {type: String, select: false}
     });
 
-var summarySchema=new Schema(
-{
-    date: [Date],
-    enters: Number,
-    leaves: Number,
-    comments:Number,
-    highfives: Number
-
-});
-
-var SummaryModel=mongoose.model('SummaryModel', summarySchema);
 
 module.exports=mongoose.model('Event', eventModel);
