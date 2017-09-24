@@ -13,6 +13,18 @@ exports.list_all_events=function (req,res) {
     })
 };
 
+exports.filter_by_dates=function (req,res) {
+    var from=new  Date(req.params.from);
+    var to=new Date(req.params.to);
+
+    Event.find({date: { $gte:from ,$lte: to}}, function(err, result){
+        if (err)
+            res.send(err);
+            res.json(result);
+        });
+
+    };
+
 
 exports.create_a_event=function (req,res) {
     var new_event=new Event(req.body);
@@ -36,7 +48,7 @@ exports.delete_a_event=function (req,res) {
         _id: req.params.eventId
     }, function (err, event) {
         if(err)
-            res.send(err)
+            res.send(err);
         res.json({message: 'Task Sucessfully deleted'});
     });
 
