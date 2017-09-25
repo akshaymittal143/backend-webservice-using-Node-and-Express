@@ -15,7 +15,7 @@ localhost:3000
 * gulp-mocha
 * gulp-env
 * supertest
-First install [node.js](http://nodejs.org/) and [mongodb](https://www.mongodb.org/downloads). Then:
+* First install [node.js](http://nodejs.org/) and [mongodb](https://www.mongodb.org/downloads). Then:
 
 ```sh
 $ npm install mongoose
