@@ -20,7 +20,7 @@ describe('Event Controller Tests:', function () {
             };
             var eventController=require('../controller/eventController');
 
-            eventController.create_a_event(req,res)(Event);
+            eventController.create_a_event(req,res);
 
             res.status.calledWith(400).should.equal(true, 'Bad status'+ res.status.args[0][0]);
             res.send.calledWith('User is required').should.equal(true);

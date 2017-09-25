@@ -1,3 +1,4 @@
+'use strict'
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -11,9 +12,19 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 //creating connection to Database
-var db = mongoose.connect('mongodb://localhost/eventAPI',{
+var db;
+
+if(process.env.ENV=='Test')//create db for test
+    db= mongoose.connect('mongodb://localhost/eventAPI_test',{
     useMongoClient: true
 });
+
+else
+{
+    db= mongoose.connect('mongodb://localhost/eventAPI',{
+        useMongoClient: true
+    });
+}
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
