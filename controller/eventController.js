@@ -28,12 +28,22 @@ exports.filter_by_dates=function (req,res) {
 
 
 exports.create_a_event=function (req,res) {
+
+
     var new_event=new Event(req.body);
-    new_event.save(function (err, event) {
-        if(err)
-            res.send(err);
+    if(!req.body.user) //for Mocha test
+    {
+        res.status(400);
+        res.send('User is required');
+    }
+    else {
+        new_event.save(function (err, event) {
+            if (err)
+                res.send(err);
             res.json(event);
-    });
+        });
+        res.status(200);
+    }
 };
 
 exports.read_a_event=function (req,res) {
@@ -72,5 +82,7 @@ exports.get_summary=function (req,res) {
         if(err)
             res.send(err);
             res.json(summary);
+    }).populate('Event').exec(function (err,result) {
+        return callback(null,null);
     });
 };
