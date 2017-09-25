@@ -11,6 +11,7 @@ localhost:3000
 * mongoose
 * body-parser
 * gulp
+* gulp-nodemon
 * sinon
 * gulp-mocha
 * gulp-env
@@ -18,7 +19,15 @@ localhost:3000
 * First install [node.js](http://nodejs.org/) and [mongodb](https://www.mongodb.org/downloads). Then:
 
 ```sh
-$ npm install mongoose
+$ npm init
+$ npm install express --save
+$ npm install mongoose --save
+$ npm install body-parser --save
+$ npm install gulp --save
+$ npm install gulp-nodemon --save
+$ npm install gulp-mocha should sinon --save-dev
+$ npm install gulp-env --save-dev
+$ npm install supertest --save
 ```
 
 # To Run tests
@@ -31,5 +40,6 @@ $ npm install mongoose
 * Add Mongo folder to PATH
 * Run mongod
 * Run mongo
-* Execute content from booksData.js inside mongo shell
-* https://gist.github.com/akshaymittal143/f86b7a474a5ef5d530786b74b471791f
+* Install [Robo3t](https://robomongo.org/) for MongoDB GUI
+* create a database (eg. eventAPI)
+ 
