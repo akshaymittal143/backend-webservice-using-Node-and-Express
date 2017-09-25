@@ -12,15 +12,14 @@ var eventModel=new Schema(
     });
 
 var summarySchema=new Schema(
-{
-    date: [Date],
-    enters: Number,
-    leaves: Number,
-    comments:Number,
-    highfives: Number
+    {
+        events: [{type: mongoose.Schema.ObjectId, ref: 'Event'}],
+        enters: Number,
+        leaves: Number,
+        comments:Number,
+        highfives: Number
 
-});
+    });
 
-var SummaryModel=mongoose.model('SummaryModel', summarySchema);
-
+module.exports=mongoose.model('Summary', summarySchema);
 module.exports=mongoose.model('Event', eventModel);
