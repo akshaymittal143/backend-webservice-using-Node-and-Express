@@ -4,7 +4,7 @@
 * or gulp
 Gulp should open a new browser window for you, but if it doesn't, just point your browser to:
 localhost:3000
-* I used [postman](https://www.getpostman.com/) for testing my API
+* I used [postman](https://www.getpostman.com/) for testing the API
 
 # Dependencies
 * node.js
