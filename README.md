@@ -1,9 +1,10 @@
-# backend-webservice-using-Node-and-Express
+# backend webservice using NodeJs and Express
 # Getting Started
 * npm start Will begin the server process using Nodemon.
 * or gulp
 Gulp should open a new browser window for you, but if it doesn't, just point your browser to:
 localhost:3000
+* I used [postman](https://www.getpostman.com/) for testing my API
 
 # Dependencies
 * node.js
