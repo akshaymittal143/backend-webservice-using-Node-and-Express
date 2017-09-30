@@ -15,8 +15,9 @@ exports.list_all_events=function (req,res) {
 };
 
 exports.filter_by_dates=function (req,res) {
-    var from=new  Date(req.params.from);
-    var to=new Date(req.params.to);
+
+    var from=new Date(req.query.from);
+    var to=new Date(req.query.to);
 
     Event.find({date: { $gte:from ,$lte: to}}, function(err, result){
         if (err)
