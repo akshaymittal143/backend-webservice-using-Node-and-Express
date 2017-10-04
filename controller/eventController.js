@@ -67,15 +67,16 @@ exports.delete_a_event=function (req,res) {
 };
 
 exports.clear_events=function (req,res) {
-    var collection=Event.collection('eventAPI');
-    var query={};
-        collection.deleteMany(query, function (err, event) {
-            if (err)
-                res.send(err);
+   // var collection=Event.collection('eventAPI');
+    //var query={};
+
+        Event.remove({}, function (err, event) {
+                if (err) {
+                    res.send(err);
+                }
                 console.log(obj.event.n + "document(s) deleted");
                 res.json({message: 'All events clear'});
         });
-
 };
 
 exports.get_summary=function (req,res) {
