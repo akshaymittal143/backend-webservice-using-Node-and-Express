@@ -3,6 +3,7 @@
 [![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-ui)
 [![Dependency Status](https://david-dm.org/swagger-api/swagger-ui/status.svg)](https://david-dm.org/swagger-api/swagger-ui)
 [![devDependency Status](https://david-dm.org/swagger-api/swagger-ui/dev-status.svg)](https://david-dm.org/swagger-api/swagger-ui#info=devDependencies)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 # Getting Started
 * npm start Will begin the server process using Nodemon.
 * or gulp
